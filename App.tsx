@@ -10,6 +10,7 @@ import Booking from './components/Booking';
 import Footer from './components/Footer';
 import SearchOverlay from './components/SearchOverlay';
 import MobileMenu from './components/MobileMenu';
+import PullToRefresh from './components/PullToRefresh';
 
 const App: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -35,6 +36,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-stone-900 selection:bg-amber-400 selection:text-black">
+      <PullToRefresh />
       <Navbar 
         scrolled={scrolled} 
         onOpenSearch={() => setIsSearchOpen(true)} 
