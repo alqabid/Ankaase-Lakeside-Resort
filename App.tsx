@@ -11,6 +11,10 @@ import Footer from './components/Footer';
 import SearchOverlay from './components/SearchOverlay';
 import MobileMenu from './components/MobileMenu';
 import PullToRefresh from './components/PullToRefresh';
+import Map from './components/Map';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import FAB from './components/FAB';
 
 const App: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -49,10 +53,14 @@ const App: React.FC = () => {
         <Rooms />
         <Amenities />
         <Gallery />
+        <Testimonials />
+        <Map />
+        <FAQ />
         <Booking />
       </main>
 
       <Footer />
+      <FAB />
 
       <AnimatePresence>
         {isSearchOpen && (

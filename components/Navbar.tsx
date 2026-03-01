@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -15,6 +15,13 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ scrolled, onOpenSearch, onOpenMenu }) => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -24,6 +31,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onOpenSearch, onOpenMenu }) =
         scrolled ? "py-4 px-6 glass-dark" : "py-8 px-12 bg-transparent"
       )}
     >
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-400 origin-left"
+        style={{ scaleX }}
+      />
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Left: Search Button */}
         <div className="flex gap-2">
