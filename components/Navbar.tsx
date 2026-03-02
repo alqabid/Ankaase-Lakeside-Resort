@@ -36,7 +36,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onOpenSearch, onOpenMenu }) =
         style={{ scaleX }}
       />
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Left: Search Button */}
         <div className="flex gap-2">
           <button
             onClick={onOpenSearch}
@@ -46,7 +45,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onOpenSearch, onOpenMenu }) =
           </button>
         </div>
 
-        {/* Center: Logo */}
         <a
           href="#home"
           className="px-8 py-3 rounded-full glass text-white font-display font-black tracking-tighter text-xl hover:bg-white/10 transition-all uppercase"
@@ -54,7 +52,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onOpenSearch, onOpenMenu }) =
           ANKAASE
         </a>
 
-        {/* Right: Book & Menu */}
         <div className="flex gap-2 items-center">
           <a
             href="#booking"

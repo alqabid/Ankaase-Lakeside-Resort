@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Waves, Utensils, Music, Ship, Coffee, Sparkles } from 'lucide-react';
+import { Zap, UtensilsCrossed, Anchor, Flower2 } from 'lucide-react';
 
 const Amenities: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -8,30 +8,30 @@ const Amenities: React.FC = () => {
   const amenities = [
     {
       id: "jetski",
-      title: "Jet Skiing",
-      desc: "Feel the rush of adrenaline as you zip across the calm waters of Lake Bosomtwe.",
-      icon: <Waves className="w-8 h-8" />,
+      title: "Adrenaline",
+      desc: "Feel the raw power of our high-performance jet skis as you carve through the glass-like surface of the lake.",
+      icon: <Zap className="w-8 h-8" />,
       img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop"
     },
     {
       id: "dining",
-      title: "Lakeside Dining",
-      desc: "Savor the freshest local tilapia and international delicacies with a view.",
-      icon: <Utensils className="w-8 h-8" />,
+      title: "Gastronomy",
+      desc: "A curated culinary journey featuring the finest local ingredients and world-class preparation by the shore.",
+      icon: <UtensilsCrossed className="w-8 h-8" />,
       img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop"
     },
     {
       id: "cruise",
-      title: "Sunset Cruise",
-      desc: "Relax on our luxury boat as the sun dips below the crater's rim.",
-      icon: <Ship className="w-8 h-8" />,
+      title: "Voyages",
+      desc: "Drift into the golden hour on our private luxury vessel, where the horizon meets the crater's edge.",
+      icon: <Anchor className="w-8 h-8" />,
       img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop"
     },
     {
       id: "spa",
-      title: "Spa & Wellness",
-      desc: "Rejuvenate your body and mind with our signature lakeside treatments.",
-      icon: <Sparkles className="w-8 h-8" />,
+      title: "Sanctuary",
+      desc: "Find your center with holistic treatments designed to harmonize your spirit with the natural rhythm of the lake.",
+      icon: <Flower2 className="w-8 h-8" />,
       img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
     }
   ];
@@ -68,6 +68,10 @@ const Amenities: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="text-[10px] font-display font-bold uppercase tracking-widest text-white/60">Activities Open Today</span>
+              </div>
               <h2 className="text-4xl md:text-6xl font-display font-black mb-8 leading-tight">
                 Play in <br />
                 <span className="text-amber-400">Paradise.</span>
@@ -104,7 +108,19 @@ const Amenities: React.FC = () => {
                   className="max-w-md"
                 >
                   <h3 className="text-3xl font-display font-black mb-4 text-white">{amenities[activeTab].title}</h3>
-                  <p className="text-xl text-white/70 leading-relaxed">{amenities[activeTab].desc}</p>
+                  <p className="text-xl text-white/70 leading-relaxed mb-8">{amenities[activeTab].desc}</p>
+                  
+                  <div className="flex gap-6 items-center pt-6 border-t border-white/10 opacity-60">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[10px] font-display font-bold uppercase tracking-widest text-amber-400">Equipment</span>
+                      <span className="text-xs text-white font-medium">Pro-Grade Gear</span>
+                    </div>
+                    <div className="w-px h-8 bg-white/10"></div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[10px] font-display font-bold uppercase tracking-widest text-amber-400">Safety</span>
+                      <span className="text-xs text-white font-medium">Certified Guides</span>
+                    </div>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </motion.div>

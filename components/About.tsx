@@ -1,23 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Waves, Sun, Utensils } from 'lucide-react';
+import { Compass, Feather, ChefHat } from 'lucide-react';
 
 const About: React.FC = () => {
   const features = [
     {
-      icon: <Waves className="w-8 h-8" />,
-      title: "Lake Bosomtwe",
-      desc: "Ghana's only natural lake, formed in an ancient meteorite crater."
+      icon: <Compass className="w-8 h-8" />,
+      title: "Meteorite Legacy",
+      desc: "Discover Ghana's only natural lake, born from a celestial impact over a million years ago."
     },
     {
-      icon: <Sun className="w-8 h-8" />,
-      title: "Pure Serenity",
-      desc: "Escape the city noise and wake up to the sound of calm waters."
+      icon: <Feather className="w-8 h-8" />,
+      title: "Soulful Serenity",
+      desc: "Transcend the ordinary. Wake up to the rhythmic whisper of calm waters and morning mist."
     },
     {
-      icon: <Utensils className="w-8 h-8" />,
-      title: "Local Flavors",
-      desc: "Freshly caught tilapia and authentic Ghanaian cuisine by the shore."
+      icon: <ChefHat className="w-8 h-8" />,
+      title: "Artisanal Dining",
+      desc: "From lake to table. Experience the refined essence of Ashanti flavors and fresh local catch."
     }
   ];
 
@@ -41,7 +41,7 @@ const About: React.FC = () => {
               adventure and relaxation that you won't find anywhere else in Ghana.
             </p>
             
-            <div className="space-y-8">
+            <div className="space-y-8 mb-12">
               {features.map((f, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <div className="w-14 h-14 rounded-2xl bg-amber-400/10 flex items-center justify-center text-amber-400 shrink-0">
@@ -53,6 +53,27 @@ const About: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="flex flex-wrap gap-8 pt-8 border-t border-white/5 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                  <span className="text-[8px] font-black">ECO</span>
+                </div>
+                <span className="text-[10px] font-display font-bold uppercase tracking-widest">Certified Green</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                  <span className="text-[8px] font-black">5★</span>
+                </div>
+                <span className="text-[10px] font-display font-bold uppercase tracking-widest">Luxury Rated</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                  <span className="text-[8px] font-black">GHA</span>
+                </div>
+                <span className="text-[10px] font-display font-bold uppercase tracking-widest">Tourism Board</span>
+              </div>
             </div>
           </motion.div>
 

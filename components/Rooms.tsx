@@ -38,12 +38,12 @@ const Rooms: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-display font-black mb-4">
-              Sleep in <br />
-              <span className="text-amber-400">Total Comfort.</span>
+              Rest in <br />
+              <span className="text-amber-400">Pure Luxury.</span>
             </h2>
             <p className="text-xl text-white/60 max-w-xl">
-              Each room is designed to bring the outside in, with floor-to-ceiling 
-              windows and private balconies overlooking the lake.
+              Sanctuaries designed to blur the line between architecture and nature. 
+              Every suite is a private gateway to the lake's soul.
             </p>
           </motion.div>
           <a 
@@ -70,31 +70,38 @@ const Rooms: React.FC = () => {
                 }
               }}
             >
-              <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative mb-6">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative mb-8 group-hover:shadow-2xl group-hover:shadow-amber-400/10 transition-all duration-500">
                 <img 
                   src={room.img} 
                   alt={room.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent opacity-80"></div>
+                
+                <div className="absolute top-8 right-8">
+                  <div className="bg-amber-400 text-stone-900 px-4 py-2 rounded-full text-[10px] font-display font-black uppercase tracking-widest shadow-xl">
+                    Available
+                  </div>
+                </div>
+
+                <div className="absolute bottom-8 left-8 right-8">
                   <div className="flex justify-between items-end">
                     <div>
-                      <p className="text-amber-400 font-display font-bold text-sm uppercase tracking-widest mb-1">From</p>
-                      <p className="text-2xl font-display font-black text-white">{room.price}</p>
-                    </div>
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-xl flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-stone-900 transition-colors">
-                      <Bed className="w-5 h-5" />
+                      <span className="text-amber-400 font-display font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">Starting at</span>
+                      <p className="text-3xl font-display font-black text-white tracking-tighter">{room.price}</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-amber-400 transition-colors">{room.title}</h3>
-              <div className="flex gap-4 text-white/40 text-sm font-medium">
-                <div className="flex items-center gap-1"><Bed className="w-4 h-4" /> {room.features[0]}</div>
-                <div className="flex items-center gap-1"><Users className="w-4 h-4" /> {room.features[1]}</div>
-                <div className="flex items-center gap-1"><Maximize className="w-4 h-4" /> {room.features[2]}</div>
+              
+              <div className="px-4">
+                <h3 className="text-3xl font-display font-black mb-4 group-hover:text-amber-400 transition-colors tracking-tight">{room.title}</h3>
+                <div className="flex flex-wrap gap-6 text-white/30 text-[10px] font-display font-bold uppercase tracking-widest">
+                  <div className="flex items-center gap-2"><Bed className="w-3 h-3 text-amber-400" /> {room.features[0]}</div>
+                  <div className="flex items-center gap-2"><Users className="w-3 h-3 text-amber-400" /> {room.features[1]}</div>
+                  <div className="flex items-center gap-2"><Maximize className="w-3 h-3 text-amber-400" /> {room.features[2]}</div>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -15,6 +15,8 @@ import Map from './components/Map';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import FAB from './components/FAB';
+import CustomCursor from './components/CustomCursor';
+import Preloader from './components/Preloader';
 
 const App: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -39,8 +41,21 @@ const App: React.FC = () => {
   }, [isSearchOpen, isMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-stone-900 selection:bg-amber-400 selection:text-black">
+    <div className="min-h-screen bg-stone-900 selection:bg-amber-400 selection:text-black overflow-x-hidden">
+      <Preloader />
+      <CustomCursor />
       <PullToRefresh />
+      
+      {/* Grain Effect */}
+      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+        </svg>
+      </div>
+
       <Navbar 
         scrolled={scrolled} 
         onOpenSearch={() => setIsSearchOpen(true)} 

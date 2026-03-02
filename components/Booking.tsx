@@ -36,12 +36,12 @@ const Booking: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-display font-black mb-8 leading-tight">
-              Ready to <br />
-              <span className="text-amber-400">Escape?</span>
+              Begin Your <br />
+              <span className="text-amber-400">Odyssey.</span>
             </h2>
             <p className="text-xl text-white/60 mb-12 max-w-md">
-              Book your stay today and experience the magic of Lake Bosomtwe. 
-              Our team is ready to welcome you.
+              Secure your sanctuary on the banks of Lake Bosomtwe. 
+              The water is waiting for you.
             </p>
             
             <div className="space-y-6">
