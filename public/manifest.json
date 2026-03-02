@@ -1,0 +1,17 @@
+{
+  "name": "Ankaase Lakeside Resort",
+  "short_name": "Ankaase",
+  "description": "The ultimate luxury escape in Ghana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1917",
+  "theme_color": "#fbbf24",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

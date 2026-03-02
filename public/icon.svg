@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#1c1917"/>
+  <text x="50%" y="240" dominant-baseline="middle" text-anchor="middle" fill="#fbbf24" font-family="Poppins, sans-serif" font-weight="900" font-size="90" letter-spacing="-2">ANKAASE</text>
+  <path d="M156 320c30 0 30-40 60-40s30 40 60 40 30-40 60-40 30 40 60 40" stroke="#fbbf24" stroke-width="20" fill="none" stroke-linecap="round"/>
+</svg>
